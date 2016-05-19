@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Final
+Bundle-SymbolicName: com.varun.decorator.final;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.varun.decorator_final.Activator
+Bundle-Vendor: VARUN
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

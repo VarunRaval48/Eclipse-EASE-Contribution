@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.decorators">
+      <decorator
+            class="com.varun.decorator.main.DecoratorClass"
+            id="com.varun.decorator.final.decorator1"
+            label="Certificates"
+            objectClass="org.eclipse.core.resources.IFile">
+      </decorator>
+   </extension>
+
+</plugin>
