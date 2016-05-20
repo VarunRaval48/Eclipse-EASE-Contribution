@@ -1,15 +1,29 @@
 package com.varun.decorator.main;
 
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.IDecoration;
 import org.eclipse.jface.viewers.ILabelDecorator;
 import org.eclipse.jface.viewers.ILabelProviderListener;
+import org.eclipse.jface.viewers.ILightweightLabelDecorator;
+import org.eclipse.jface.viewers.LabelProviderChangedEvent;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.Platform;; 
 
-public class DecoratorClass implements ILabelDecorator {
 
+/*
+ * class that overlays image on icons
+ * 
+ */
+public class DecoratorClass implements ILightweightLabelDecorator{
+
+	//creating image
+	private final ImageDescriptor OVERLAY = 
+			ImageDescriptor.createFromFile(this.getClass(), "lock.gif");
+	
 	@Override
 	public void addListener(ILabelProviderListener listener) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -31,15 +45,21 @@ public class DecoratorClass implements ILabelDecorator {
 	}
 
 	@Override
-	public Image decorateImage(Image image, Object element) {
+	public void decorate(Object element, IDecoration decoration) {
 		// TODO Auto-generated method stub
-		return null;
-	}
+		
+//		LabelProviderChangedEvent l = new LabelProviderChangedEvent()
+		
+		IFile ifile = (IFile)element;
+		// To make sure we are dealing with adaptable objects
+		//		IFile ifile = (IFile)Platform.getAdapterManager().getAdapter(element, IFile.class);
 
-	@Override
-	public String decorateText(String text, Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("-------In-decorate--------");
+		
+		//Place conditions here on what to put decorators
+		if(ifile.getFileExtension().equals("js")){
+			decoration.addOverlay(OVERLAY);
+		}
 	}
 
 }

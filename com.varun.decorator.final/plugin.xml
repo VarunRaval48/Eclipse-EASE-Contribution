@@ -4,10 +4,16 @@
    <extension
          point="org.eclipse.ui.decorators">
       <decorator
+            adaptable="true"
             class="com.varun.decorator.main.DecoratorClass"
             id="com.varun.decorator.final.decorator1"
             label="Certificates"
-            objectClass="org.eclipse.core.resources.IFile">
+            lightweight="true"
+            location="TOP_LEFT"
+            state="true">
+		  <enablement>
+		  		<objectClass name="org.eclipse.core.resources.IFile"/>	
+		  </enablement>
       </decorator>
    </extension>
 
