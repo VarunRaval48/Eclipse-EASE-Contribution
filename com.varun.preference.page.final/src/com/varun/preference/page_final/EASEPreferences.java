@@ -3,6 +3,7 @@ package com.varun.preference.page_final;
 import org.eclipse.jface.preference.BooleanFieldEditor;
 import org.eclipse.jface.preference.DirectoryFieldEditor;
 import org.eclipse.jface.preference.FieldEditorPreferencePage;
+import org.eclipse.jface.preference.FileFieldEditor;
 import org.eclipse.jface.preference.RadioGroupFieldEditor;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.ui.IWorkbench;
@@ -27,8 +28,8 @@ public class EASEPreferences extends FieldEditorPreferencePage
 
 	@Override
 	protected void createFieldEditors() {
-
-		addField(new DirectoryFieldEditor("PATH", "Get &Default Keystore:",
+		
+		addField(new FileFieldEditor("PATH", "Get &Default Keystore:",
 		        getFieldEditorParent()));
 		
 	    addField(new BooleanFieldEditor("BOOLEAN_VALUE",
