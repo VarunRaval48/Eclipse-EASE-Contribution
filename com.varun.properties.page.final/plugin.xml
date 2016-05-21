@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="com.varun.properties.page.SignatureVals"
+            id="com.varun.properties.final.signature1"
+            name="Signature Properties">
+      </page>
+   </extension>
+
+</plugin>
