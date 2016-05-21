@@ -18,8 +18,10 @@ import org.eclipse.core.runtime.Platform;;
 public class DecoratorClass implements ILightweightLabelDecorator{
 
 	//creating image
-	private final ImageDescriptor OVERLAY = 
-			ImageDescriptor.createFromFile(this.getClass(), "lock.gif");
+	private final ImageDescriptor OVERLAY1 = 
+			ImageDescriptor.createFromFile(this.getClass(), "valid_cert.jpeg");
+	private final ImageDescriptor OVERLAY2 = 
+			ImageDescriptor.createFromFile(this.getClass(), "invalid_cert.jpeg");
 	
 	@Override
 	public void addListener(ILabelProviderListener listener) {
@@ -58,7 +60,10 @@ public class DecoratorClass implements ILightweightLabelDecorator{
 		
 		//Place conditions here on what to put decorators
 		if(ifile.getFileExtension().equals("js")){
-			decoration.addOverlay(OVERLAY);
+			decoration.addOverlay(OVERLAY1);
+		}
+		else if(ifile.getFileExtension().equals("java")){
+			decoration.addOverlay(OVERLAY2);
 		}
 	}
 
